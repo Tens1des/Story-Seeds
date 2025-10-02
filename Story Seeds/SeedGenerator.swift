@@ -48,3 +48,4 @@ class SeedGenerator: ObservableObject {
         return (words + phrases).shuffled()
     }
 }
+

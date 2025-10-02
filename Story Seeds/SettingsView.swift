@@ -197,7 +197,6 @@ struct SettingsView: View {
             VStack(spacing: 20) {
                 appearanceCard
                 languageCard
-                soundEffectsCard
             }
         }
     }
@@ -319,41 +318,7 @@ struct SettingsView: View {
             )
     }
     
-    private var soundEffectsCard: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Image(systemName: "speaker.wave.2.fill")
-                    .foregroundColor(.orange)
-                Text("Sound Effects")
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                
-                Spacer()
-                
-                soundToggle
-            }
-            
-            Text("Sounds during generation and saving")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-        }
-        .cardStyle()
-        .padding(.horizontal, 16)
-        .padding(.vertical, 16)
-    }
-    
-    private var soundToggle: some View {
-        Toggle("", isOn: Binding<Bool>(
-            get: { storage.settings.soundsEnabled },
-            set: { newValue in
-                withAnimation(.springBounce) {
-                    updateSoundEffects(newValue)
-                }
-            }
-        ))
-        .tint(.purple)
-        .scaleEffect(1.1)
-    }
+    // Sound effects removed as per request
     
     // MARK: - Favorites Section
     private var favoritesSection: some View {

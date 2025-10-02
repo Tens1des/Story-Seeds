@@ -292,3 +292,4 @@ struct UsageStatsSummaryView: View {
 #Preview {
     AchievementsView(storage: StorageService())
 }
+
